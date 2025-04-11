@@ -1,0 +1,16 @@
+#Imagen base
+FROM nginx:latest
+
+# Crear directorio para SSL
+RUN mkdir -p /etc/nginx/ssl
+
+# Copiar certificados SSL al contenedor
+# COPY /P3-MarioRgzLpz-certificados/certificado_MarioRgzLpz.csr /etc/nginx/ssl/certificado_MarioRgzLpz.crt
+# COPY /P3-MarioRgzLpz-certificados/certificado_MarioRgzLpz.key /etc/nginx/ssl/certificado_MarioRgzLpz.key
+
+# Incluir configuración de Nginx para SSL
+# COPY /P3-MarioRgzLpz-nginx/MarioRgzLpz-nginx-ssl.conf /etc/nginx/nginx.conf
+
+# Exponer el puerto HTTPSa
+EXPOSE 80 443
+

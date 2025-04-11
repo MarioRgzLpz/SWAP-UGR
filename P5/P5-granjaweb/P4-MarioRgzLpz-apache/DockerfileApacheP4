@@ -1,0 +1,40 @@
+# Use an Alpine Linux base image
+FROM alpine:3.15.0
+
+# Install Apache, PHP, and networking tools
+RUN apk add --no-cache \
+    bash \
+    php8-apache2 \
+    php8 \
+    apache2 \
+    apache2-ssl \
+    iptables 
+
+
+# Copy certificate and private key
+COPY /P4-MarioRgzLpz-certificados/certificado_MarioRgzLpz.crt /etc/apache2/ssl/certificado_MarioRgzLpz.crt
+COPY /P4-MarioRgzLpz-certificados/certificado_MarioRgzLpz.key /etc/apache2/ssl/certificado_MarioRgzLpz.key
+
+# Copy Apache configuration files
+COPY /P4-MarioRgzLpz-apache/configsapache/httpd.conf /etc/apache2/httpd.conf
+COPY /P4-MarioRgzLpz-apache/MarioRgzLpz-apache-ssl.conf /etc/apache2/conf.d/MarioRgzLpz-apache-ssl.conf
+
+# Copy Entrypoint script
+COPY /P4-MarioRgzLpz-apache/entrypoint.sh /entrypoint.sh
+
+# Copy script iptables
+COPY /P4-MarioRgzLpz-apache//P4-MarioRgzLpz-iptables-web/MarioRgzLpz-iptables-web.sh /MarioRgzLpz-iptables-web.sh
+
+# Dar permisos de ejecución a los scripts
+RUN chmod +x /entrypoint.sh /MarioRgzLpz-iptables-web.sh
+
+# Enable SSL module
+RUN sed -i '/LoadModule ssl_module/s/^#//g' /etc/apache2/httpd.conf
+
+# Expose port 80 and 443 for Apache
+EXPOSE 80
+EXPOSE 443
+
+# Configurar el script de entrada
+ENTRYPOINT ["/entrypoint.sh"]
+

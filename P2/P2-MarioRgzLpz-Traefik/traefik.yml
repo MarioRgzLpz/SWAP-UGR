@@ -1,0 +1,11 @@
+api:
+  insecure: true # Permite mostrar el dashboard de Traefik en HTTP
+
+entryPoints:
+  web:
+    address: ":80" # Puerto por el que escucha Traefik
+
+providers:
+  file:
+    directory: /etc/traefik/conf.d # Directorio donde se encuentran los ficheros de configuración dinámica
+    watch: true # Habilita la detección de cambios en los ficheros de configuración dinámica

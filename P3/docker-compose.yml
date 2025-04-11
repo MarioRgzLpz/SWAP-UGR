@@ -1,0 +1,135 @@
+version: '4.0'
+
+services:
+  web1:
+    image: mariorgzlpz-apache-image:p3
+    volumes:
+      - ./web_MarioRgzLpz:/var/www/localhost/htdocs
+      - ./P3-MarioRgzLpz-apache/MarioRgzLpz-apache-ssl.conf:/etc/apache2/conf.d/MarioRgzLpz-apache-ssl.conf
+      - ./P3-MarioRgzLpz-certificados:/etc/apache2/ssl
+    container_name: web1
+    networks:
+      red_web:
+        ipv4_address: 192.168.10.2
+      red_servicios:
+        ipv4_address: 192.168.20.2
+
+  web2:
+    image: mariorgzlpz-apache-image:p3
+    volumes:
+      - ./web_MarioRgzLpz:/var/www/localhost/htdocs
+      - ./P3-MarioRgzLpz-apache/MarioRgzLpz-apache-ssl.conf:/etc/apache2/conf.d/MarioRgzLpz-apache-ssl.conf
+      - ./P3-MarioRgzLpz-certificados:/etc/apache2/ssl
+    container_name: web2  
+    networks:
+      red_web:
+        ipv4_address: 192.168.10.3
+      red_servicios:
+        ipv4_address: 192.168.20.3
+
+  web3:
+    image: mariorgzlpz-apache-image:p3
+    volumes:
+      - ./web_MarioRgzLpz:/var/www/localhost/htdocs
+      - ./P3-MarioRgzLpz-apache/MarioRgzLpz-apache-ssl.conf:/etc/apache2/conf.d/MarioRgzLpz-apache-ssl.conf
+      - ./P3-MarioRgzLpz-certificados:/etc/apache2/ssl
+    container_name: web3 
+    networks:
+      red_web:
+        ipv4_address: 192.168.10.4
+      red_servicios:
+        ipv4_address: 192.168.20.4
+
+  web4:
+    image: mariorgzlpz-apache-image:p3
+    volumes:
+      - ./web_MarioRgzLpz:/var/www/localhost/htdocs
+      - ./P3-MarioRgzLpz-apache/MarioRgzLpz-apache-ssl.conf:/etc/apache2/conf.d/MarioRgzLpz-apache-ssl.conf
+      - ./P3-MarioRgzLpz-certificados:/etc/apache2/ssl
+    container_name: web4 
+    networks:
+      red_web:
+        ipv4_address: 192.168.10.5
+      red_servicios:
+        ipv4_address: 192.168.20.5
+
+  web5:
+    image: mariorgzlpz-apache-image:p3
+    volumes:
+      - ./web_MarioRgzLpz:/var/www/localhost/htdocs
+      - ./P3-MarioRgzLpz-apache/MarioRgzLpz-apache-ssl.conf:/etc/apache2/conf.d/MarioRgzLpz-apache-ssl.conf
+      - ./P3-MarioRgzLpz-certificados:/etc/apache2/ssl    
+    container_name: web5   
+    networks:
+      red_web:
+        ipv4_address: 192.168.10.6
+      red_servicios:
+        ipv4_address: 192.168.20.6
+
+  web6:
+    image: mariorgzlpz-apache-image:p3
+    volumes:
+      - ./web_MarioRgzLpz:/var/www/localhost/htdocs
+      - ./P3-MarioRgzLpz-apache/MarioRgzLpz-apache-ssl.conf:/etc/apache2/conf.d/MarioRgzLpz-apache-ssl.conf
+      - ./P3-MarioRgzLpz-certificados:/etc/apache2/ssl
+    container_name: web6  
+    networks:
+      red_web:
+        ipv4_address: 192.168.10.7
+      red_servicios:
+        ipv4_address: 192.168.20.7
+
+  web7:
+    image: mariorgzlpz-apache-image:p3
+    volumes:
+      - ./web_MarioRgzLpz:/var/www/localhost/htdocs
+      - ./P3-MarioRgzLpz-apache/MarioRgzLpz-apache-ssl.conf:/etc/apache2/conf.d/MarioRgzLpz-apache-ssl.conf
+      - ./P3-MarioRgzLpz-certificados:/etc/apache2/ssl
+    container_name: web7
+    networks:
+      red_web:
+        ipv4_address: 192.168.10.8
+      red_servicios:
+        ipv4_address: 192.168.20.8
+
+  web8:
+    image: mariorgzlpz-apache-image:p3
+    volumes:
+      - ./web_MarioRgzLpz:/var/www/localhost/htdocs
+      - ./P3-MarioRgzLpz-apache/MarioRgzLpz-apache-ssl.conf:/etc/apache2/conf.d/MarioRgzLpz-apache-ssl.conf
+      - ./P3-MarioRgzLpz-certificados:/etc/apache2/ssl
+    container_name: web8
+    networks:
+      red_web:
+        ipv4_address: 192.168.10.9
+      red_servicios:
+        ipv4_address: 192.168.20.9
+
+  balanceador-nginx:
+    image: mariorgzlpz-nginx-image:p3
+    volumes:
+      - ./P3-MarioRgzLpz-nginx/MarioRgzLpz-nginx-ssl.conf:/etc/nginx/nginx.conf
+      - ./P3-MarioRgzLpz-certificados/certificado_MarioRgzLpz.crt:/etc/nginx/ssl/certificado_MarioRgzLpz.crt
+      - ./P3-MarioRgzLpz-certificados/certificado_MarioRgzLpz.key:/etc/nginx/ssl/certificado_MarioRgzLpz.key
+      - ./ticket_sesion_MarioRgzLpz.key:/etc/nginx/ssl/session_ticket.key
+    container_name: balanceador-nginx
+    ports:
+      - 80:80
+      - 443:443
+    networks:
+      red_web:
+        ipv4_address: 192.168.10.50 
+
+networks:
+  red_web:
+    driver: bridge
+    ipam:
+      config:
+        - subnet: 192.168.10.0/24
+          gateway: 192.168.10.1
+  red_servicios:
+    driver: bridge
+    ipam:
+      config:
+        - subnet: 192.168.20.0/24
+          gateway: 192.168.20.1

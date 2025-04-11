@@ -1,0 +1,22 @@
+# Usar una imagen base de Linux
+FROM alpine:3.15.0
+
+# Instalar Apache, PHP y herramientas de red (en este caso tenemos ping por defecto para comprobar conectividad)
+RUN apk add --no-cache \
+    bash \
+    php8-apache2 \
+    php8 \
+    apache2 
+
+COPY configsapache/httpd.conf /etc/apache2/httpd.conf
+
+# Habilitar el acceso de .htaccess para sobrescribir la configuracion
+# RUN sed -i 's|    AllowOverride None|    AllowOverride All|g' /etc/apache2/httpd.conf
+# Actualiza el directorio index para agregar archivos php
+# RUN sed -i 's|DirectoryIndex index.html|DirectoryIndex index.php index.html|g' /etc/apache2/httpd.conf
+
+# Exponer el puerto 80 para Apache
+EXPOSE 80
+
+# Comando predeterminado para iniciar Apache en primer plano
+CMD ["httpd", "-D", "FOREGROUND"]

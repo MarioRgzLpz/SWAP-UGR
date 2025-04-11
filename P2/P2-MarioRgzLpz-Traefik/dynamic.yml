@@ -1,0 +1,18 @@
+http:  
+  routers: # Routers configuration
+    Router-1: # Llamo a mi router Router-1
+      rule: "Host(`localhost`)" # Defino la regla de mi router, que sera en localhost es decir donde se encuentra mi balanceador de carga
+      service: "web-service" # Especiifico el servicio que va a utilizar mi router
+ 
+  services: # Services configuration
+    web-service: # Llamo a mi servicio web-service 
+      loadBalancer: # Defino el balanceador de carga 
+        servers: # Defino los servidores que tendra mi balanceador de carga 
+          - url: "http://web1:80" # Defino las urls de los contenedores que se encuentran en mi red
+          - url: "http://web2:80"
+          - url: "http://web3:80"
+          - url: "http://web4:80"
+          - url: "http://web5:80"
+          - url: "http://web6:80"
+          - url: "http://web7:80"
+          - url: "http://web8:80"

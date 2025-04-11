@@ -1,0 +1,5 @@
+#Imagen base
+FROM haproxy:latest
+
+# Copia el archivo de configuración personalizado
+# COPY haproxy.cfg /usr/local/etc/haproxy/haproxy.cfg

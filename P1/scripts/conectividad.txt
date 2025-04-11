@@ -1,0 +1,88 @@
+===============================
+Realizando ping desde dentro de web7 hacia los demás contenedores
+===============================
+Realizando ping desde web7...
+Ping desde web7 hacia web4 en la red web (192.168.10.5)
+Ping desde web7 hacia web5 en la red web (192.168.10.6)
+Ping desde web7 hacia web1 en la red web (192.168.10.2)
+Ping desde web7 hacia web8 en la red web (192.168.10.9)
+Ping desde web7 hacia web3 en la red web (192.168.10.4)
+Ping desde web7 hacia web6 en la red web (192.168.10.7)
+Ping desde web7 hacia web2 en la red web (192.168.10.3)
+===============================
+Realizando ping desde dentro de web4 hacia los demás contenedores
+===============================
+Realizando ping desde web4...
+Ping desde web4 hacia web7 en la red web (192.168.10.8)
+Ping desde web4 hacia web5 en la red web (192.168.10.6)
+Ping desde web4 hacia web1 en la red web (192.168.10.2)
+Ping desde web4 hacia web8 en la red web (192.168.10.9)
+Ping desde web4 hacia web3 en la red web (192.168.10.4)
+Ping desde web4 hacia web6 en la red web (192.168.10.7)
+Ping desde web4 hacia web2 en la red web (192.168.10.3)
+===============================
+Realizando ping desde dentro de web5 hacia los demás contenedores
+===============================
+Realizando ping desde web5...
+Ping desde web5 hacia web7 en la red web (192.168.10.8)
+Ping desde web5 hacia web4 en la red web (192.168.10.5)
+Ping desde web5 hacia web1 en la red web (192.168.10.2)
+Ping desde web5 hacia web8 en la red web (192.168.10.9)
+Ping desde web5 hacia web3 en la red web (192.168.10.4)
+Ping desde web5 hacia web6 en la red web (192.168.10.7)
+Ping desde web5 hacia web2 en la red web (192.168.10.3)
+===============================
+Realizando ping desde dentro de web1 hacia los demás contenedores
+===============================
+Realizando ping desde web1...
+Ping desde web1 hacia web7 en la red web (192.168.10.8)
+Ping desde web1 hacia web4 en la red web (192.168.10.5)
+Ping desde web1 hacia web5 en la red web (192.168.10.6)
+Ping desde web1 hacia web8 en la red web (192.168.10.9)
+Ping desde web1 hacia web3 en la red web (192.168.10.4)
+Ping desde web1 hacia web6 en la red web (192.168.10.7)
+Ping desde web1 hacia web2 en la red web (192.168.10.3)
+===============================
+Realizando ping desde dentro de web8 hacia los demás contenedores
+===============================
+Realizando ping desde web8...
+Ping desde web8 hacia web7 en la red web (192.168.10.8)
+Ping desde web8 hacia web4 en la red web (192.168.10.5)
+Ping desde web8 hacia web5 en la red web (192.168.10.6)
+Ping desde web8 hacia web1 en la red web (192.168.10.2)
+Ping desde web8 hacia web3 en la red web (192.168.10.4)
+Ping desde web8 hacia web6 en la red web (192.168.10.7)
+Ping desde web8 hacia web2 en la red web (192.168.10.3)
+===============================
+Realizando ping desde dentro de web3 hacia los demás contenedores
+===============================
+Realizando ping desde web3...
+Ping desde web3 hacia web7 en la red web (192.168.10.8)
+Ping desde web3 hacia web4 en la red web (192.168.10.5)
+Ping desde web3 hacia web5 en la red web (192.168.10.6)
+Ping desde web3 hacia web1 en la red web (192.168.10.2)
+Ping desde web3 hacia web8 en la red web (192.168.10.9)
+Ping desde web3 hacia web6 en la red web (192.168.10.7)
+Ping desde web3 hacia web2 en la red web (192.168.10.3)
+===============================
+Realizando ping desde dentro de web6 hacia los demás contenedores
+===============================
+Realizando ping desde web6...
+Ping desde web6 hacia web7 en la red web (192.168.10.8)
+Ping desde web6 hacia web4 en la red web (192.168.10.5)
+Ping desde web6 hacia web5 en la red web (192.168.10.6)
+Ping desde web6 hacia web1 en la red web (192.168.10.2)
+Ping desde web6 hacia web8 en la red web (192.168.10.9)
+Ping desde web6 hacia web3 en la red web (192.168.10.4)
+Ping desde web6 hacia web2 en la red web (192.168.10.3)
+===============================
+Realizando ping desde dentro de web2 hacia los demás contenedores
+===============================
+Realizando ping desde web2...
+Ping desde web2 hacia web7 en la red web (192.168.10.8)
+Ping desde web2 hacia web4 en la red web (192.168.10.5)
+Ping desde web2 hacia web5 en la red web (192.168.10.6)
+Ping desde web2 hacia web1 en la red web (192.168.10.2)
+Ping desde web2 hacia web8 en la red web (192.168.10.9)
+Ping desde web2 hacia web3 en la red web (192.168.10.4)
+Ping desde web2 hacia web6 en la red web (192.168.10.7)

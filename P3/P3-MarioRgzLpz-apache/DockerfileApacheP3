@@ -1,0 +1,29 @@
+# Use an Alpine Linux base image
+FROM alpine:3.15.0
+
+# Install Apache, PHP, and networking tools
+RUN apk add --no-cache \
+    bash \
+    php8-apache2 \
+    php8 \
+    apache2 \
+    apache2-ssl
+
+
+# Copy certificate and private key
+# COPY /P3-MarioRgzLpz-certificados/certificado_MarioRgzLpz.crt /etc/apache2/ssl/certificado_MarioRgzLpz.crt
+# COPY /P3-MarioRgzLpz-certificados/certificado_MarioRgzLpz.key /etc/apache2/ssl/certificado_MarioRgzLpz.key
+
+# Copy Apache configuration files
+COPY /P3-MarioRgzLpz-apache/configsapache/httpd.conf /etc/apache2/httpd.conf
+# COPY /P3-MarioRgzLpz-apache/MarioRgzLpz-apache-ssl.conf /etc/apache2/conf.d/MarioRgzLpz-apache-ssl.conf
+
+# Enable SSL module
+RUN sed -i '/LoadModule ssl_module/s/^#//g' /etc/apache2/httpd.conf
+
+# Expose port 80 for Apache
+EXPOSE 80
+EXPOSE 443
+
+# Command to start Apache in the foreground
+CMD ["httpd", "-D", "FOREGROUND"]

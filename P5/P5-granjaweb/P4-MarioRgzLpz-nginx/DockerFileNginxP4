@@ -1,0 +1,15 @@
+#Imagen base
+FROM nginx:latest
+
+# Crear directorio para SSL
+RUN mkdir -p /etc/nginx/ssl
+
+RUN apt-get update && apt-get install -y iptables
+
+# COPY P4-MarioRgzLpz-nginx/P4-MarioRgLpz-iptables-nginx/MarioRgzLpz-iptables-nginx.sh /docker-entrypoint.d/MarioRgzLpz-iptables-nginx.sh
+
+# RUN chmod +x docker-entrypoint.d/MarioRgzLpz-iptables-nginx.sh
+
+# Exponer el puerto HTTPS
+EXPOSE 80 443
+

@@ -1,0 +1,245 @@
+version: '4.0'
+
+services:
+  web1:
+    image: wordpress:latest
+    restart: always
+    volumes:
+      - ./web_wordpress_MarioRgzLpz:/var/www/html
+      - ./P4-MarioRgzLpz-apache/MarioRgzLpz-apache-ssl.conf:/etc/apache2/conf.d/MarioRgzLpz-apache-ssl.conf
+      - ./P4-MarioRgzLpz-certificados:/etc/apache2/ssl
+    environment:
+      WORDPRESS_DB_HOST: mysql
+      WORDPRESS_DB_USER: miusuario
+      WORDPRESS_DB_PASSWORD: mipassword
+      WORDPRESS_DB_NAME: wordpress
+    container_name: web1
+    networks:
+      red_web:
+        ipv4_address: 192.168.10.2
+      red_servicios:
+        ipv4_address: 192.168.20.2
+    cap_add:
+      - NET_ADMIN
+    depends_on:
+      - mysql
+
+  web2:
+    image: wordpress:latest
+    restart: always
+    volumes:
+      - ./web_wordpress_MarioRgzLpz:/var/www/html
+      - ./P4-MarioRgzLpz-apache/MarioRgzLpz-apache-ssl.conf:/etc/apache2/conf.d/MarioRgzLpz-apache-ssl.conf
+      - ./P4-MarioRgzLpz-certificados:/etc/apache2/ssl
+    environment:
+      WORDPRESS_DB_HOST: mysql
+      WORDPRESS_DB_USER: miusuario
+      WORDPRESS_DB_PASSWORD: mipassword
+      WORDPRESS_DB_NAME: wordpress
+    container_name: web2  
+    networks:
+      red_web:
+        ipv4_address: 192.168.10.3
+      red_servicios:
+        ipv4_address: 192.168.20.3
+    cap_add:
+      - NET_ADMIN
+    depends_on:
+      - mysql
+
+  web3:
+    image: wordpress:latest
+    restart: always
+    volumes:
+      - ./web_wordpress_MarioRgzLpz:/var/www/html
+      - ./P4-MarioRgzLpz-apache/MarioRgzLpz-apache-ssl.conf:/etc/apache2/conf.d/MarioRgzLpz-apache-ssl.conf
+      - ./P4-MarioRgzLpz-certificados:/etc/apache2/ssl
+    environment:
+      WORDPRESS_DB_HOST: mysql
+      WORDPRESS_DB_USER: miusuario
+      WORDPRESS_DB_PASSWORD: mipassword
+      WORDPRESS_DB_NAME: wordpress
+    container_name: web3 
+    networks:
+      red_web:
+        ipv4_address: 192.168.10.4
+      red_servicios:
+        ipv4_address: 192.168.20.4
+    cap_add:
+      - NET_ADMIN
+    depends_on:
+      - mysql
+
+  web4:
+    image: wordpress:latest
+    restart: always
+    volumes:
+      - ./web_wordpress_MarioRgzLpz:/var/www/html
+      - ./P4-MarioRgzLpz-apache/MarioRgzLpz-apache-ssl.conf:/etc/apache2/conf.d/MarioRgzLpz-apache-ssl.conf
+      - ./P4-MarioRgzLpz-certificados:/etc/apache2/ssl
+    environment:
+      WORDPRESS_DB_HOST: mysql
+      WORDPRESS_DB_USER: miusuario
+      WORDPRESS_DB_PASSWORD: mipassword
+      WORDPRESS_DB_NAME: wordpress
+    container_name: web4 
+    networks:
+      red_web:
+        ipv4_address: 192.168.10.5
+      red_servicios:
+        ipv4_address: 192.168.20.5
+    cap_add:
+      - NET_ADMIN
+    depends_on:
+      - mysql
+
+  web5:
+    image: wordpress:latest
+    restart: always
+    volumes:
+      - ./web_wordpress_MarioRgzLpz:/var/www/html
+      - ./P4-MarioRgzLpz-apache/MarioRgzLpz-apache-ssl.conf:/etc/apache2/conf.d/MarioRgzLpz-apache-ssl.conf
+      - ./P4-MarioRgzLpz-certificados:/etc/apache2/ssl  
+    environment:
+      WORDPRESS_DB_HOST: mysql
+      WORDPRESS_DB_USER: miusuario
+      WORDPRESS_DB_PASSWORD: mipassword
+      WORDPRESS_DB_NAME: wordpress  
+    container_name: web5   
+    networks:
+      red_web:
+        ipv4_address: 192.168.10.6
+      red_servicios:
+        ipv4_address: 192.168.20.6
+    cap_add:
+      - NET_ADMIN
+    depends_on:
+      - mysql
+
+  web6:
+    image: wordpress:latest
+    restart: always
+    volumes:
+      - ./web_wordpress_MarioRgzLpz:/var/www/html
+      - ./P4-MarioRgzLpz-apache/MarioRgzLpz-apache-ssl.conf:/etc/apache2/conf.d/MarioRgzLpz-apache-ssl.conf
+      - ./P4-MarioRgzLpz-certificados:/etc/apache2/ssl
+    environment:
+      WORDPRESS_DB_HOST: mysql
+      WORDPRESS_DB_USER: miusuario
+      WORDPRESS_DB_PASSWORD: mipassword
+      WORDPRESS_DB_NAME: wordpress
+    container_name: web6  
+    networks:
+      red_web:
+        ipv4_address: 192.168.10.7
+      red_servicios:
+        ipv4_address: 192.168.20.7
+    cap_add:
+      - NET_ADMIN
+    depends_on:
+      - mysql
+
+  web7:
+    image: wordpress:latest
+    restart: always
+    volumes:
+      - ./web_wordpress_MarioRgzLpz:/var/www/html
+      - ./P4-MarioRgzLpz-apache/MarioRgzLpz-apache-ssl.conf:/etc/apache2/conf.d/MarioRgzLpz-apache-ssl.conf
+      - ./P4-MarioRgzLpz-certificados:/etc/apache2/ssl
+    environment:
+      WORDPRESS_DB_HOST: mysql
+      WORDPRESS_DB_USER: miusuario
+      WORDPRESS_DB_PASSWORD: mipassword
+      WORDPRESS_DB_NAME: wordpress
+    container_name: web7
+    networks:
+      red_web:
+        ipv4_address: 192.168.10.8
+      red_servicios:
+        ipv4_address: 192.168.20.8
+    cap_add:
+      - NET_ADMIN
+    depends_on:
+      - mysql
+
+  web8:
+    image: wordpress:latest
+    restart: always
+    volumes:
+      - ./web_wordpress_MarioRgzLpz:/var/www/html
+      - ./P4-MarioRgzLpz-apache/MarioRgzLpz-apache-ssl.conf:/etc/apache2/conf.d/MarioRgzLpz-apache-ssl.conf
+      - ./P4-MarioRgzLpz-certificados:/etc/apache2/ssl
+    environment:
+      WORDPRESS_DB_HOST: mysql
+      WORDPRESS_DB_USER: miusuario
+      WORDPRESS_DB_PASSWORD: mipassword
+      WORDPRESS_DB_NAME: wordpress
+    container_name: web8
+    networks:
+      red_web:
+        ipv4_address: 192.168.10.9
+      red_servicios:
+        ipv4_address: 192.168.20.9
+    cap_add:
+      - NET_ADMIN
+    depends_on:
+      - mysql
+
+  balanceador-nginx:
+    image: mariorgzlpz-nginx-image:p4
+    command: ['nginx', '-g', 'daemon off;']
+    restart: always
+    volumes:
+      - ./P4-MarioRgzLpz-nginx/MarioRgzLpz-nginx-ssl.conf:/etc/nginx/nginx.conf
+      - ./P4-MarioRgzLpz-certificados/certificado_MarioRgzLpz.crt:/etc/nginx/ssl/certificado_MarioRgzLpz.crt
+      - ./P4-MarioRgzLpz-certificados/certificado_MarioRgzLpz.key:/etc/nginx/ssl/certificado_MarioRgzLpz.key
+      - ./ticket_sesion_MarioRgzLpz.key:/etc/nginx/ssl/session_ticket.key
+    container_name: balanceador-nginx
+    ports:
+      - 80:80
+      - 443:443
+    networks:
+      red_web:
+        ipv4_address: 192.168.10.50 
+    cap_add:
+      - NET_ADMIN
+    depends_on:
+      - web1
+      - web2
+      - web3
+      - web4
+      - web5
+      - web6
+      - web7
+      - web8
+      - mysql
+
+  mysql:
+    image: mysql:5.7
+    volumes:
+      - ./mysql_data_MarioRgzLpz:/var/lib/mysql
+    container_name: base_datos
+    tty: true
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: 1234
+      MYSQL_DATABASE: wordpress
+      MYSQL_USER: miusuario
+      MYSQL_PASSWORD: mipassword
+    networks:
+      red_servicios:
+        ipv4_address: 192.168.20.11
+
+networks:
+  red_web:
+    driver: bridge
+    ipam:
+      config:
+        - subnet: 192.168.10.0/24
+          gateway: 192.168.10.1
+  red_servicios:
+    driver: bridge
+    ipam:
+      config:
+        - subnet: 192.168.20.0/24
+          gateway: 192.168.20.1

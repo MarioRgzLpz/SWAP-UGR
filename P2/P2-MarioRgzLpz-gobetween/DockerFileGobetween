@@ -1,0 +1,3 @@
+# Utiliza la imagen base de gobetween
+FROM  yyyar/gobetween:latest
+

@@ -1,0 +1,20 @@
+[
+    {
+        "nombre_contenedor": "web1",
+        "contenedor_id": "1121aadb52c04f4d586921540154012004cc3e0df36b71a8e56140f8ef63c758",
+        "memoria": 23154688,
+        "uso_cpu_total": 91010000
+    },
+    {
+        "nombre_contenedor": "web3",
+        "contenedor_id": "aa41f82d1e7c40290b01211ac26d4b6e95087045839ee8c54ad7b83d6b72a8ef",
+        "memoria": 23158784,
+        "uso_cpu_total": 92802000
+    },
+    {
+        "nombre_contenedor": "web2",
+        "contenedor_id": "fea543e5f5615b30392f546396b130384ceaf2cf3352654489ce6d2d317625f0",
+        "memoria": 23179264,
+        "uso_cpu_total": 93570000
+    }
+]

@@ -1,0 +1,20 @@
+# Utilizar la imagen base de Alpine
+FROM alpine:3.15.0
+
+# Instalar Nginx y PHP
+RUN apk --update --no-cache add nginx php8 php8-fpm bash
+
+# Copiar la configuración de Nginx
+COPY configsnginx/nginx.conf /etc/nginx/nginx.conf
+
+# Crear el directorio para el socket de PHP-FPM
+RUN mkdir -p /run/php
+
+# Copiar el archivo PHP de ejemplo
+COPY web_MarioRgzLpz/index.php /var/www/localhost/htdocs/index.php
+
+# Exponer el puerto 80
+EXPOSE 80
+
+# Comando para iniciar Nginx y PHP-FPM
+CMD nginx && php-fpm8 -F
